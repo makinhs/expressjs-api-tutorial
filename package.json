@@ -1,0 +1,28 @@
+{
+  "name": "expressjs-api-tutorial",
+  "version": "0.0.1",
+  "description": "Tutorial of how to create a REST API using ExpressJS",
+  "main": "dist/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makinhs/expressjs-api-tutorial.git"
+  },
+  "keywords": [
+    "REST",
+    "API",
+    "ExpressJS",
+    "NodeJS"
+  ],
+  "author": "Marcos Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/makinhs/expressjs-api-tutorial/issues"
+  },
+  "homepage": "https://github.com/makinhs/expressjs-api-tutorial#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
