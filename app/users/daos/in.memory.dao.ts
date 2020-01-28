@@ -1,3 +1,5 @@
+import * as shortUUID from 'short-uuid';
+
 export class GenericInMemoryDao {
     private static instance: GenericInMemoryDao;
     users: any = [];
@@ -14,26 +16,35 @@ export class GenericInMemoryDao {
     }
 
     addUser(user: any) {
-        return this.users.push(user);
+        return new Promise((resolve) => {
+            user.id = shortUUID.generate();
+            this.users.push(user)
+            resolve(user.id);
+        });
     }
 
     getUsers() {
-        return this.users;
+        return new Promise((resolve) => {
+            resolve(this.users);
+        });
     }
 
     getUserById(userId: string) {
-        return this.users.find((user: { id: string; }) => user.id === userId);
+        return new Promise((resolve) => {
+            resolve(this.users.find((user: { id: string; }) => user.id === userId));
+        });
     }
 
     putUserById(user: any) {
         const objIndex = this.users.findIndex((obj: { id: any; }) => obj.id === user.id);
-        const updatedUsers = [
+        this.users = [
             ...this.users.slice(0, objIndex),
             user,
             ...this.users.slice(objIndex + 1),
         ];
-        this.users = updatedUsers;
-        return `${user.id} updated via put`;
+        return new Promise((resolve) => {
+            resolve(`${user.id} updated via put`);
+        });
     }
 
     patchUserById(user: any) {
@@ -49,14 +60,29 @@ export class GenericInMemoryDao {
             currentUser,
             ...this.users.slice(objIndex + 1),
         ];
-        return `${user.id} patched`;
+        return new Promise((resolve) => {
+            resolve(`${user.id} patched`);
+        });
     }
 
 
     removeUserById(userId: string) {
         const objIndex = this.users.findIndex((obj: { id: any; }) => obj.id === userId);
         this.users = this.users.splice(objIndex, objIndex);
-        return `${userId} removed`;
+        return new Promise((resolve) => {
+            resolve(`${userId} removed`);
+        });
     }
 
+    getByEmail(email: string) {
+        return new Promise((resolve) => {
+            const objIndex = this.users.findIndex((obj: { email: any; }) => obj.email === email);
+            let currentUser = this.users[objIndex];
+            if (currentUser) {
+                resolve(currentUser);
+            } else {
+                resolve(null);
+            }
+        });
+    }
 }
