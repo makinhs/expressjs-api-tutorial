@@ -24,7 +24,7 @@ export class UsersController {
         const password = Buffer.from(req.body.password);
         req.body.password = (await sp.hashPassword(password)).toString('utf-8');
         const userId = await usersService.create(req.body);
-        res.status(200).send({id: userId});
+        res.status(201).send({id: userId});
     }
 
     async patch(req: express.Request, res: express.Response) {
