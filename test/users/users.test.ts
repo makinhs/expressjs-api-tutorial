@@ -29,6 +29,7 @@ it(`should GET /users/:userId`, async function () {
     expect(res.body.id).to.be.an('string');
     expect(res.body.name).to.be.equals(firstUserBody.name);
     expect(res.body.email).to.be.equals(firstUserBody.email);
+    expect(res.body.permissionLevel).to.be.equals(8);
     expect(res.body.id).to.be.equals(firstUserIdTest);
 });
 

@@ -28,6 +28,7 @@
   "dependencies": {
     "argon2-pass": "^1.0.2",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "short-uuid": "^3.1.1"
   },
   "devDependencies": {
