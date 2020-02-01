@@ -1,11 +1,12 @@
 import app from '../../app/app';
 import {agent as request} from 'supertest';
 import {expect} from 'chai';
+import * as shortUUId from 'short-uuid';
 
 let firstUserIdTest = '';
 let firstUserBody = {
     "name": "Marcos SIlva",
-    "email": "tio.maki12n@gmail.com",
+    "email": `tio.makin+auth${shortUUId.generate()}@gmail.com`,
     "password": "Pass#your!word"
 };
 
@@ -20,8 +21,8 @@ it('should POST /users', async function () {
     expect(res.status).to.equal(201);
     expect(res.body).not.to.be.empty;
     expect(res.body).to.be.an("object");
-    expect(res.body.id).to.be.an('string');
-    firstUserIdTest = res.body.id;
+    expect(res.body._id).to.be.an('string');
+    firstUserIdTest = res.body._id;
 });
 
 it(`should POST to /auth and retrieve an access token`, async () => {

@@ -6,7 +6,7 @@ import express from 'express';
 
 export class AuthRoutes extends CommonRoutesConfig implements configureRoutes{
     constructor(app: express.Application) {
-        super(app, 'UsersRoute');
+        super(app, 'AuthRoutes');
         this.configureRoutes();
     }
 

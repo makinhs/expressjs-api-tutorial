@@ -5,6 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "tsc": "tsc",
+    "dev-debug": "nodemon --watch . --ext ts --exec \"npm run tsc\"",
     "start": "npm run tsc && node ./dist/app.js",
     "test-dev": "nodemon --watch . --ext ts --exec \"mocha -r ts-node/register test/**/*.test.ts\"",
     "dev": "nodemon --watch . --ext ts --exec \"docker-compose build && docker-compose up\"",
@@ -30,6 +31,7 @@
     "argon2-pass": "^1.0.2",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.11",
     "short-uuid": "^3.1.1"
   },
   "devDependencies": {
