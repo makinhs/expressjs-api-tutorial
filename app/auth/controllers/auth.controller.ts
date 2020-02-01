@@ -6,7 +6,7 @@ const crypto = require('crypto');
 
 // todo: move to a secure place
 const jwtSecret = 'My!@!Se3cr8tH4sh';
-const tokenExpirationInSeconds = 3600;
+const tokenExpirationInSeconds = 36000;
 
 export class AuthController {
     constructor() {

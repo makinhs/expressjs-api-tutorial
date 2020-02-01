@@ -92,6 +92,9 @@ it(`should POST to /auth/refresh-token and retrieve a new access token`, async (
 
 it('should DELETE /users/:userId', async function () {
     const res = await request(app)
-        .delete(`/users/${firstUserIdTest}`).send();
+        .delete(`/users/${firstUserIdTest}`)
+        .set('Accept', 'application/json')
+        .set('Authorization', `Bearer ${jwt.accessToken}`)
+        .send();
     expect(res.status).to.equal(204);
 });

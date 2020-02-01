@@ -31,7 +31,7 @@ export class AuthMiddleware {
             const result = await sp.verifyHash(requestPassword, passwordBuffer);
             if (SecurePass.isValid(result)) {
                 req.body = {
-                    userId: user.id,
+                    userId: user._id,
                     email: user.email,
                     provider: 'email',
                     permissionLevel: user.permissionLevel,

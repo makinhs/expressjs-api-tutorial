@@ -23,7 +23,7 @@ export class UsersController {
         const sp = new SecurePass();
         const password = Buffer.from(req.body.password);
         req.body.password = (await sp.hashPassword(password)).toString('utf-8');
-        req.body.permissionLevel = 8;
+        req.body.permissionLevel = 1 + 2 + 4 + 8;
         const userId = await usersService.create(req.body);
         res.status(201).send({_id: userId});
     }
