@@ -1,0 +1,15 @@
+version: '3'
+services:
+  api:
+    command: npm run test-dev
+    build: .
+    volumes:
+      - ./api:/app
+    networks:
+      - backend
+    ports:
+      - "3000:3000"
+
+networks:
+  backend:
+    driver: bridge

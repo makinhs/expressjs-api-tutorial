@@ -7,6 +7,7 @@
     "tsc": "tsc",
     "start": "npm run tsc && node ./dist/app.js",
     "test-dev": "nodemon --watch . --ext ts --exec \"mocha -r ts-node/register test/**/*.test.ts\"",
+    "dev": "nodemon --watch . --ext ts --exec \"docker-compose build && docker-compose up\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
