@@ -43,7 +43,6 @@ it(`should POST to /auth and retrieve an access token`, async () => {
 });
 
 it(`should GET /users/:userId`, async function () {
-    console.log(`Bearer ${jwt.accessToken}`);
     const res = await request(app)
         .get(`/users/${firstUserIdTest}`)
         .set('Accept', 'application/json')
