@@ -34,6 +34,8 @@ Each branch defines one lesson and use case, but the *master* branch contains th
 
 011 - Configuring basic permissions usages: https://github.com/makinhs/expressjs-api-tutorial/tree/011-configurando-permissoes
 
+012 - Configuring basic logs with winston: https://github.com/makinhs/expressjs-api-tutorial/tree/012-configurando-logs
+
 ## I just want to use it!
 
 Checklist of what you should have:
