@@ -4,7 +4,10 @@ This project contains the source code of an API built in ExpressJS for a series 
 
 It contains the full source code at the master branch and each video branches to who wants to practice.
 
+## English tutorials
 
+You can find a tutorial for each branch of this project at my medium articles that starts here:
+https://medium.com/@makinhs/another-expressjs-api-tutorial-for-2020-part-01-hello-world-969d3280d4c0
 
 ## Branches
 
