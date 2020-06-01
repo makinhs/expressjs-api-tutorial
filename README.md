@@ -57,3 +57,7 @@ modularization, common patterns, and a good security level.
 Please make sure to remove the hard-coded jwtSecret when you will be using for your own project. You could export as a node variable the values that you want and import it as well.
 
 Have fun ;)
+
+## Changelog
+
+2020-06-01: updated at the master branch and branch number 5 the remove method on the generic in.memory to use splice(obj,1) instead of (obj,obj) that was causing bugs. Please be aware that the other branches are not changed.
