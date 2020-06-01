@@ -68,7 +68,7 @@ export class GenericInMemoryDao {
 
     removeUserById(userId: string) {
         const objIndex = this.users.findIndex((obj: { id: any; }) => obj.id === userId);
-        this.users = this.users.splice(objIndex, objIndex);
+        this.users = this.users.splice(objIndex, 1);
         return new Promise((resolve) => {
             resolve(`${userId} removed`);
         });
