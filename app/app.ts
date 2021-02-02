@@ -8,6 +8,7 @@ import {AuthRoutes} from './auth/auth.routes.config'
 
 import * as winston from 'winston';
 import * as expressWinston from 'express-winston';
+import helmet from 'helmet';
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
@@ -31,6 +32,8 @@ app.use(function (req, res, next) {
         return next();
     }
 });
+
+app.use(helmet());
 
 app.use(expressWinston.logger({
     transports: [

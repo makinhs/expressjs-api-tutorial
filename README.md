@@ -61,3 +61,7 @@ Have fun ;)
 ## Changelog
 
 2020-06-01: updated at the master branch and branch number 5 the remove method on the generic in.memory to use splice(obj,1) instead of (obj,obj) that was causing bugs. Please be aware that the other branches are not changed.
+
+2020-02-02: switched auth library to argon2 due issues on npm install
+
+2020-02-02: added helmet as suggestion enhancement from [Linch1](https://github.com/Linch1)
