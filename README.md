@@ -4,7 +4,11 @@ This project contains the source code of an API built in ExpressJS for a series 
 
 It contains the full source code at the master branch and each video branches to who wants to practice.
 
+## English tutorials
 
+You can find a tutorial for each branch of this project at my medium articles that starts here:
+
+https://medium.com/@makinhs/another-expressjs-api-tutorial-for-2020-part-01-hello-world-969d3280d4c0
 
 ## Branches
 
@@ -34,6 +38,8 @@ Each branch defines one lesson and use case, but the *master* branch contains th
 
 011 - Configuring basic permissions usages: https://github.com/makinhs/expressjs-api-tutorial/tree/011-configurando-permissoes
 
+012 - Configuring basic logs with winston: https://github.com/makinhs/expressjs-api-tutorial/tree/012-configurando-logs
+
 ## I just want to use it!
 
 Checklist of what you should have:
@@ -51,3 +57,7 @@ modularization, common patterns, and a good security level.
 Please make sure to remove the hard-coded jwtSecret when you will be using for your own project. You could export as a node variable the values that you want and import it as well.
 
 Have fun ;)
+
+## Changelog
+
+2020-06-01: updated at the master branch and branch number 5 the remove method on the generic in.memory to use splice(obj,1) instead of (obj,obj) that was causing bugs. Please be aware that the other branches are not changed.
