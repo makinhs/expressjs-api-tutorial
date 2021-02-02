@@ -1,6 +1,6 @@
 import express from 'express';
 import {UsersService} from '../../users/services/user.services';
-import {SecurePass} from 'argon2-pass';
+import argon2 from 'argon2';
 
 export class AuthMiddleware {
     private static instance: AuthMiddleware;
@@ -25,11 +25,7 @@ export class AuthMiddleware {
         const user: any = await userService.getByEmail(req.body.email);
         if (user) {
             let passwordHash = user.password;
-            const sp = new SecurePass();
-            const passwordBuffer = Buffer.from(passwordHash, 'utf8');
-            const requestPassword = Buffer.from(req.body.password, 'utf8');
-            const result = await sp.verifyHash(requestPassword, passwordBuffer);
-            if (SecurePass.isValid(result)) {
+            if (await argon2.verify(passwordHash, req.body.password)) {
                 req.body = {
                     userId: user._id,
                     email: user.email,

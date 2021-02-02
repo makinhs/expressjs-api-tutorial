@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/makinhs/expressjs-api-tutorial#readme",
   "dependencies": {
-    "argon2-pass": "^1.0.2",
+    "argon2": "^0.27.1",
     "express": "^4.17.1",
     "express-winston": "^4.0.2",
     "jsonwebtoken": "^8.5.1",
@@ -37,6 +37,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@types/argon2": "^0.15.0",
     "@types/chai": "^4.2.8",
     "@types/express": "^4.17.2",
     "@types/mocha": "^7.0.1",
